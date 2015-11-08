@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.pratice.project.dao.IGetDao">
+
+
+	<select id="selectName" parameterType="String" resultType="name">
+		 <![CDATA[
+		 SELECT UserName
+         FROM usertbl
+         WHERE UserName = #{name}
+        ]]>
+	</select>
+
+	<select id="selectUser" parameterType="String" resultType="user">
+		 <![CDATA[
+		 SELECT *
+         FROM usertbl
+         WHERE UserID = #{userID}
+        ]]>
+	</select>
+
+	<insert id="addUser" parameterType="user">
+	 <![CDATA[
+		insert into userTbl(UserID,UserName,UserAge,Phone,Comment) values 
+		(#{userID},#{userName},#{userAge},#{phone},#{comment});
+	   ]]>
+	</insert>
+</mapper>

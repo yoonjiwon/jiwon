@@ -12,6 +12,10 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
+	<context:component-scan base-package="com.pratice.project" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -20,6 +24,9 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-
+<!-- 
+	<context:component-scan 
+		base-package="com.pratice.project"></context:component-scan>
+ -->
 	
 </beans:beans>
